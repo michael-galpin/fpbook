@@ -24,7 +24,7 @@ class UserService extends Observable[User] {
 
 object FancyApplication extends Actor {
   def main(args:Array[String]) {
-    val userService = new UserService
+    val userService = new UserService 
     userService.addObserver(this)
     args.foreach(s => userService.getUser(s.toLong))
   }
